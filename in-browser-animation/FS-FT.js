@@ -9,6 +9,11 @@ let k = 10; //adjusment constant
 let tex;
 let cn;
 let play = false;
+let overProgress = false;
+let xOffset = 0.0;
+let max_value = 60;
+let bx,by;
+
 
 function setup() {
   createCanvas(1500, 700);
@@ -127,7 +132,7 @@ function draw() {
   pop();
   if(T>=60){
      T = 60;
-     noLoop();
+     //noLoop();
   }
   progressbar(T,60);
 }
