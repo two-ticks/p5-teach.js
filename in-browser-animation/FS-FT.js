@@ -15,7 +15,7 @@ let max_value = 60;
 let bx, by;
 
 function setup() {
-  createCanvas(1500, 700);
+  createCanvas(windowWidth,windowHeight);
   frameRate(6);
   slider = createSlider(1, T, 1, 0.1);
   slider.position(0.1 * width, 0.5 * height);
