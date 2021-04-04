@@ -12,8 +12,7 @@ let play = false;
 let overProgress = false;
 let xOffset = 0.0;
 let max_value = 60;
-let bx,by;
-
+let bx, by;
 
 function setup() {
   createCanvas(1500, 700);
@@ -22,7 +21,7 @@ function setup() {
   slider.position(0.1 * width, 0.5 * height);
 
   speed = createSlider(0.001, 2, 0.025, 0.001);
-  speed.position(0.1 * width, 0.65 * height);
+  speed.position(0.1 * width, 0.938 * height);
 
   cn = createP();
   cn.style("font-size", "18px"); //font-size
@@ -39,11 +38,11 @@ function setup() {
 
 function draw() {
   background(50, 20, 150);
-  fill(0);
+  fill(237, 34, 93);
   noStroke();
-  textSize(17);
+  textSize(20);
   textAlign(CENTER, CENTER);
-  text("Speed", 0.075 * width, 0.665 * height);
+  text("Speed", 0.075 * width, 0.955 * height);
 
   T_p = slider.value();
   if (T < T_p) {
@@ -130,11 +129,11 @@ function draw() {
   var d = concat(c, "}} \\right)");
   katex.render(d, tex.elt); //KaTex script
   pop();
-  if(T>=60){
-     T = 60;
-     //noLoop();
+  if (T >= 60) {
+    T = 60;
+    //noLoop();
   }
-  progressbar(T,60);
+  progressbar(T, 60);
 }
 
 function graph() {
