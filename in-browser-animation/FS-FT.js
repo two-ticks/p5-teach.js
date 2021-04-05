@@ -17,7 +17,7 @@ let bx, by;
 function setup() {
   createCanvas(windowWidth,windowHeight);
   frameRate(6);
-  slider = createSlider(1, T, 1, 0.1);
+  slider = createSlider(1, 5, 1, 0.1);
   slider.position(0.1 * width, 0.5 * height);
 
   speed = createSlider(0.001, 2, 0.025, 0.001);
@@ -183,8 +183,18 @@ function ppf() {
   stroke(250, 20, 50);
   strokeWeight(4);
   beginShape();
-  //vertex(0,0);
-  for (let x = 0; x <= 0.03 * width; x += T) {
+  stroke(250, 20, 50);
+  vertex(x_scale * (-0.5 * T_p), 0);
+  vertex(x_scale * (- 0.5 * T_p), -y_scale);
+  vertex(0, -y_scale);
+  vertex(x_scale * (0.5 * T_p), -y_scale);
+  vertex(x_scale * (0.5 * T_p), 0);
+  endShape();
+  beginShape();
+  stroke(250, 20, 50);
+  vertex(x_scale * (0.5 * T_p), 0);
+  stroke(50, 250, 50);
+  for (let x = T; x <= 0.03 * width; x += T) {
     vertex(x_scale * (x - 0.5 * T_p), 0);
     vertex(x_scale * (x - 0.5 * T_p), -y_scale);
     vertex(x_scale * x, -y_scale);
