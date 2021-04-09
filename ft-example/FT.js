@@ -18,6 +18,19 @@ function setup() {
   createCanvas(710, 400,WEBGL);
 
   frameRate(6);
+
+ 
+  ft = createGraphics(500,500);
+  ft.noFill();
+  ft.stroke(250, 20, 50);
+  ft.beginShape();
+  ft.strokeWeight(1.5);
+  ft.scale(0.75);
+  for (let x = -5.25; x <= 5.25; x += 0.01) {
+    ft.vertex(x_scale * x, y_scale * func(x));
+  }
+  ft.endShape();
+
 }
 
 function draw() {
@@ -30,30 +43,18 @@ function draw() {
 
   //sinc
 
-  push();
-  noFill();
-
-  //shininess(1);
-  //specularMaterial(250);
-  stroke(250, 20, 50);
+  
+  
   push();
   normalMaterial();
   fill(197, 140, 133,50);
-  plane(width/2, height/3);
+  //plane(width/2, height/3);
   pop();
   //function plot 
-  beginShape();
-  
-  
-  strokeWeight(1.5);
-  scale(0.75);
-  for (let x = width/4; x <= width/2; x += 0.001) {
-    vertex(x_scale * x, -y_scale * func(x));
-  }
-  endShape();
-  pop();
+  image(ft, 0, 0, 710, 400, 0, 0, 500,500);
 
 }
+
 
 function func(x) {
   // Write your function here
