@@ -9,7 +9,8 @@ let blinkTimer = 1;
 //use frameCount % 100  for better result
 
 function setup() {
-  p5Canvas = createCanvas(1300, 300);
+  //p5Canvas = createCanvas(1300, 300);
+  p5Canvas = createCanvas(500, 300);
   frameRate(1);
   //p5Canvas = createCanvas(300, 300,WEBGL);
   //normalMaterial();
@@ -33,7 +34,7 @@ function draw() {
   //let flowerObj = new flower([204, 101, 192, 127]);
   //fadeIn(flowerObj);
 
-  //writing(" writing the text", 0,0, width / 100, height / 1.75, 100);
+  writing(" writing the text", 0,0, width / 100, height / 1.75, 100);
 
   //typeWriter(" p5.js", 0, width / 100, height / 1.75, 100);
 
