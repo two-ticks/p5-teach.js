@@ -18,18 +18,21 @@ function setup() {
   createCanvas(710, 400,WEBGL);
 
   frameRate(6);
+  camera(0, 0, 700, 0, 0, 0, 0, 1, 0);
+  //perspective(PI / 3.0, width / height, 0.1, 500);
 
- 
-  ft = createGraphics(500,500);
+  ft = createGraphics(1710, 400);
+  ft.translate(width/2+15,100);
   ft.noFill();
-  ft.stroke(250, 20, 50);
+  ft.stroke(255, 0, 0);
   ft.beginShape();
-  ft.strokeWeight(1.5);
+  ft.strokeWeight(2);
   ft.scale(0.75);
-  for (let x = -5.25; x <= 5.25; x += 0.01) {
+  for (let x = -3.50; x <= 0.50; x += 0.0001) {
     ft.vertex(x_scale * x, y_scale * func(x));
   }
   ft.endShape();
+
 
 }
 
@@ -37,21 +40,21 @@ function draw() {
   background(50, 20, 150);
 
   orbitControl();
-
   fill(237, 34, 93);
   noStroke();
 
   //sinc
-
-  
-  
+   
   push();
   normalMaterial();
   fill(197, 140, 133,50);
-  //plane(width/2, height/3);
+  plane(width/1.5, height/3);
+  rotateY(PI/2);
+  translate(width/2,0,width/2);
+  plane(width/1.5, height/3);
   pop();
   //function plot 
-  image(ft, 0, 0, 710, 400, 0, 0, 500,500);
+  image(ft, -width/2, -height/4, 710, 400, 0, 0, 500,500);
 
 }
 
