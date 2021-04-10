@@ -3,6 +3,7 @@ let amt = 0.5;
 let valfadeIn = 255;
 let valfadeOut = 0;
 let blinkTimer = 1;
+
 // let zoomInVal = 10;
 // let zoomOutVal = 64;
 
@@ -11,7 +12,8 @@ let blinkTimer = 1;
 function setup() {
   //p5Canvas = createCanvas(1300, 300);
   p5Canvas = createCanvas(500, 300);
-  frameRate(1);
+  //frameRate(1);\
+  frameRate(40);
   //p5Canvas = createCanvas(300, 300,WEBGL);
   //normalMaterial();
   textSize(64);
@@ -21,7 +23,7 @@ function setup() {
 function draw() {
   background(24);
 
-  let sqr = new square(255,width/2,height/2,70,70);
+  let sqr = new square(255, width / 2, height / 2, 70);
 
   create(sqr);
 
@@ -34,7 +36,7 @@ function draw() {
   //let flowerObj = new flower([204, 101, 192, 127]);
   //fadeIn(flowerObj);
 
-  writing(" writing the text", 0,0, width / 100, height / 1.75, 100);
+  //writing(" writing the text", 0,0, width / 100, height / 1.75, 100);
 
   //typeWriter(" p5.js", 0, width / 100, height / 1.75, 100);
 
@@ -114,21 +116,21 @@ function typeWriter(sentence, n, x, y, speed) {
   }
 }
 
-function writing(sentence, n,shift, x, y, speed) {
+function writing(sentence, n, shift, x, y, speed) {
   fill(237, 34, 93);
   textSize(68);
   noStroke();
   if (n < sentence.length) {
     //text(sentence.substring(0, n), x+n, y);
-    
-    text(sentence.substring(n, n+1), x+shift, y);
-    shift += textWidth(sentence.substring(n, n+1));
-    fill(237, 34, 93,80);
-    text(sentence.substring(n+1, n+2), x+shift, y);
+
+    text(sentence.substring(n, n + 1), x + shift, y);
+    shift += textWidth(sentence.substring(n, n + 1));
+    fill(237, 34, 93, 80);
+    text(sentence.substring(n + 1, n + 2), x + shift, y);
     //text(sentence.substring(n, n + 1), x, y);
     n++;
     setTimeout(function () {
-      writing(sentence, n,shift, x, y, speed);
+      writing(sentence, n, shift, x, y, speed);
     }, speed);
     noLoop();
   }
@@ -150,25 +152,74 @@ class flower {
 }
 
 class square {
-  constructor(fillColor,x,y,width,height) {
+  constructor(fillColor, x, y, side) {
     this.fillColor = fillColor;
     this.x = x;
     this.y = y;
-    this.width = width
-    this.height = height;
+    this.side = side;
   }
 }
 
-function create(obj){
-  fill(obj.fillColor);
+function create(obj, n) {
+  stroke(obj.fillColor);
+  noFill();
   beginShape();
-  vertex(obj.x,obj.y); //center default
-  let i = frameCount/100;
-  if(i<obj.width) {
-    vertex(obj.x-0.5*obj.width+i,obj.y+0.5*obj.height);
-  }
+  vertex(obj.x, obj.y); //center default
 
-  vertex(width/2,height/2);
+  let i = frameCount;
+  if (frameCount < 4 * obj.side) {
+    if (frameCount > 0 && frameCount < obj.side) {
+      for (let i = frameCount; i > 0; i--) {
+        vertex(obj.x + i, obj.y);
+      }
+    }
+
+    if (frameCount > obj.side && frameCount < 2 * obj.side) {
+      vertex(obj.x + obj.side, obj.y);
+
+      for (let i = frameCount % obj.side; i > 0; i--) {
+        vertex(obj.x + obj.side, obj.y + i);
+      }
+    }
+    if (frameCount > 2 * obj.side && frameCount < 3 * obj.side) {
+      vertex(obj.x + obj.side, obj.y);
+      vertex(obj.x + obj.side, obj.y + obj.side);
+
+      for (let i = frameCount % obj.side; i > 0; i--) {
+        vertex(obj.x + obj.side- i, obj.y + obj.side );
+      }
+    }
+    if (frameCount > 3 * obj.side) {
+      vertex(obj.x + obj.side, obj.y);
+      vertex(obj.x + obj.side, obj.y + obj.side);
+      vertex(obj.x, obj.y + obj.side);
+
+      for (let i = frameCount % obj.side; i > 0; i--) {
+        vertex(obj.x, obj.y + obj.side - i);
+      }
+    }
+  }
+    if(frameCount >= 4 * obj.side) {
+      vertex(obj.x + obj.side, obj.y);
+      vertex(obj.x + obj.side, obj.y + obj.side);
+      vertex(obj.x, obj.y + obj.side);
+      vertex(obj.x, obj.y);
+    }
+
+    // if(frameCount>2*obj.side ){
+    //   for (let i = frameCount; i>0; i--) {
+    //     vertex(obj.x-frameCount+obj.side,obj.y+obj.side);
+    //   }
+    // }
+    // if(frameCount>3*obj.side ){
+    //   for (let i = frameCount; i>0; i--) {
+    //     vertex(obj.x,obj.y-frameCount);
+    //   }
+    // }
+    
+  
+
+  //vertex(width/2,height/2);
   endShape();
 }
 
@@ -177,35 +228,35 @@ function fadeIn(a) {
   a.show();
 }
 
-function wipeIn(data, duration, speed){
+function wipeIn(data, duration, speed) {
   fill(237, 34, 93);
   textSize(98);
   noStroke();
-  text(data,-300+speed*frameCount, height/2);
-  if(frameCount>duration/speed){
+  text(data, -300 + speed * frameCount, height / 2);
+  if (frameCount > duration / speed) {
     noLoop();
   }
 }
 
-function wipeOut(data, duration, speed){
+function wipeOut(data, duration, speed) {
   fill(237, 34, 93);
   textSize(98);
   noStroke();
-  text(data,speed*frameCount, height/2);
-  if(frameCount>duration/speed){
+  text(data, speed * frameCount, height / 2);
+  if (frameCount > duration / speed) {
     noLoop();
   }
 }
 
 function drawGrid() {
-	stroke(0,100,200,150);
-    fill(120);
-	for (var x=-2*width; x < 2*width; x+=40) {
-		line(x, -2*height, x, 2*height);
-		//text(x, x+1, 12);
-	}
-	for (var y=-2*height; y < 2*height; y+=40) {
-		line(-2*width, y, 2*width, y);
-		//text(y, 1, y+12);
-	}
+  stroke(0, 100, 200, 150);
+  fill(120);
+  for (var x = -2 * width; x < 2 * width; x += 40) {
+    line(x, -2 * height, x, 2 * height);
+    //text(x, x+1, 12);
+  }
+  for (var y = -2 * height; y < 2 * height; y += 40) {
+    line(-2 * width, y, 2 * width, y);
+    //text(y, 1, y+12);
+  }
 }
