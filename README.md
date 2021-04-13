@@ -8,16 +8,17 @@ This project would involve developing tools for teaching through p5.js, adding f
 
 ### API 
 
-| write()  | <img src="resources/write.gif" width="600" height="200"> Writes the text with a blurry effect at each new character.   |
+|function|description|
 |---|---|
+| write()  | <img src="resources/write.gif" width="600" height="200"> Writes the text with a blurry effect at each new character.   |
 | typeWriter(object)  |  <img src="resources/typeWriter.gif" width="200" height="200"> Write the text with the typing effect. |
-| fadeIn(object, duration)  |   |
-|  fadeOut(object, duration) |   |
-|  blink(object, duration) |   |
-| wipeIn(object, duration)  |   |
-| wipeOut(object, duration)  |   |
-|  zoomIn(object, duration) |   |
-| zoomOut(object, duration)  |   |
+| fadeIn(object, duration)  | <img src="resources/fadeIn.gif" width="200" height="200">  |
+|  fadeOut(object, duration) | <img src="resources/fadeOut.gif" width="200" height="200">    |
+|  blink(object, duration) | <img src="resources/blink.gif" width="200" height="200">   |
+| wipeIn(object, duration)  | <img src="resources/wipeIn.gif" width="200" height="200">   |
+| wipeOut(object, duration)  | <img src="resources/wipeOut.gif" width="200" height="200">   |
+|  zoomIn(object, duration) | <img src="resources/zoomIn.gif" width="200" height="200">   |
+| zoomOut(object, duration)  |<img src="resources/zoomOut.gif" width="200" height="200">    |
 | moveAlongPath(object, path)  |Moves object along the defined path   |
 | Transform(object1, object2)  | Transforms one shape into another by interpolating vertices from one to another. Similar to this example  |
 | Shift(x,y)  | Shifts shape and object by x and y  |
