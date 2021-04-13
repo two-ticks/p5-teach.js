@@ -22,5 +22,5 @@ This project would involve developing tools for teaching through p5.js, adding f
 | Transform(object1, object2)  | Transforms one shape into another by interpolating vertices from one to another. Similar to this example  |
 | Shift(x,y)  | Shifts shape and object by x and y  |
 |wait(duration)   | Waits for the duration specified before playing the next animation. It is helpful in timing the animation.  |
-| Create(object)  |   |
+| Create(object)  | <img src="resources/create.gif" width="200" height="200">  |
 |   |   |
