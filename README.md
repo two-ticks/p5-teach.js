@@ -8,9 +8,9 @@ This project would involve developing tools for teaching through p5.js, adding f
 
 ### API 
 
-| write(object)  | Writes the text with a blurry effect at each new character.   |
+| write()  | <img src="resources/write.gif" width="500" height="600"> Writes the text with a blurry effect at each new character.   |
 |---|---|
-| typeWriter(object)  |  Write the text with the typing effect. |
+| typeWriter(object)  |  <img src="resources/typeWriter.gif" width="500" height="600"> Write the text with the typing effect. |
 | fadeIn(object, duration)  |   |
 |  fadeOut(object, duration) |   |
 |  blink(object, duration) |   |
