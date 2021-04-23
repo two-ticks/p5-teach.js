@@ -5,6 +5,7 @@ This project would involve developing tools for teaching through p5.js, adding f
 - https://two-ticks.github.io/p5-teach.js/in-browser-animation/
 - https://two-ticks.github.io/p5-teach.js/ft-example/
 - https://two-ticks.github.io/p5-teach.js/effects/
+- https://two-ticks.github.io/p5-teach.js/sandbox/threeJS-projects/examples/3d-text.html
 
 ### API 
 
