@@ -8,19 +8,39 @@ p5.prototype.fadeIn = function (...args) {
   }
 
   if (this.alphaVal > 0) {
-    this.alphaVal = this.alphaVal - speed;
+    this.alphaVal = this.alphaVal - this.speed;
   }
 
   setTimeout(function () {
     fadeIn(args[0], alphaVal);
   }, 100);
+
   this.textSize(64);
   this.textAlign(CENTER, CENTER);
   this.background(150);
   this.fill(237, 34, 93, this.alphaVal);
   this.text(args[0], 0.5 * width, 0.5 * height);
+};
 
-  //text.fillColor[3] = text.fillColor[3] - Math.pow(frameCount, 1.25);
-  //console.log("working");
-  // return args[0];
+p5.prototype.typeWriter = function (...args) {
+  //arguments : sentence, n, x, y, speed
+  // TODO: implement this
+
+  const sentence = args[0];
+  var n = args[1];
+  const x = args[2];
+  const y = args[3];
+  const speed = args[4];
+
+  this.fill(237, 34, 93);
+  this.textSize(98);
+  this.noStroke();
+  if (n < sentence.length) {
+    text(sentence.substring(0, n + 1), x, y);
+    n++;
+    setTimeout(function () {
+      typeWriter(sentence, n, x, y, speed);
+    }, speed);
+    noLoop();
+  }
 };
