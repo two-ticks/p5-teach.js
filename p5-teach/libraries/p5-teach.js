@@ -41,6 +41,32 @@ p5.prototype.typeWriter = function (...args) {
     setTimeout(function () {
       typeWriter(sentence, n, x, y, speed);
     }, speed);
-    noLoop();
+    this.noLoop();
+  }
+};
+
+p5.prototype.writing = function (...args) {//function writing(sentence, n, shift, x, y, speed)
+  const sentence = args[0];
+  var n = args[1];
+  var shift = args[2]
+  const x = args[3];
+  const y = args[4];
+  const speed = args[5];
+  this.fill(237, 34, 93);
+  this.textSize(68);
+  this.noStroke();
+  if (n < sentence.length) {
+    //text(sentence.substring(0, n), x+n, y);
+
+    this.text(sentence.substring(n, n + 1), x + shift, y);
+    shift += textWidth(sentence.substring(n, n + 1));
+    this.fill(237, 34, 93, 80);
+    this.text(sentence.substring(n + 1, n + 2), x + shift, y);
+    //text(sentence.substring(n, n + 1), x, y);
+    n++;
+    setTimeout(function () {
+      writing(sentence, n, shift, x, y, speed);
+    }, speed);
+    this.noLoop();
   }
 };
