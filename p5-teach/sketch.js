@@ -6,7 +6,9 @@ function setup() {
 function draw() {
   //typeWriter("Hello! p5.js", 0, width / 100, height / 1.75, 250); //sentence, n, x, y, delay
   //fadeIn("p5");
-
+ 
+  drawGrid();
   writing(" writing the text", 0,0, width / 100, height / 1.75, 50);
+  
   noLoop();
 }

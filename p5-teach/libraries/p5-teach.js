@@ -1,3 +1,17 @@
+p5.prototype.drawGrid = function () {//function drawGrid()
+  //TODO: add colors for grid 
+  this.stroke(0, 100, 200, 150);
+  this.fill(120);
+  for (var x = -2 * width; x < 2 * width; x += 40) {
+    this.line(x, -2 * height, x, 2 * height);
+    text(x, x+1, 12);
+  }
+  for (var y = -2 * height; y < 2 * height; y += 40) {
+    this.line(-2 * width, y, 2 * width, y);
+    text(y, 1, y+12);
+  }
+};
+
 p5.prototype.fadeIn = function (...args) {
   // TODO: implement this
 
