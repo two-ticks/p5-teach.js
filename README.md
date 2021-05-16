@@ -4,7 +4,7 @@ This project would involve developing tools for teaching through p5.js, adding f
 - https://two-ticks.github.io/p5-teach.js/
 - https://two-ticks.github.io/p5-teach.js/in-browser-animation/
 - https://two-ticks.github.io/p5-teach.js/ft-example/
-- https://two-ticks.github.io/p5-teach.js/effects/
+- hardcoded : https://two-ticks.github.io/p5-teach.js/effects/ transfer to p5-teach.js 
 - https://two-ticks.github.io/p5-teach.js/sandbox/threeJS-projects/examples/3d-text.html
 
 ### API 
@@ -26,3 +26,9 @@ This project would involve developing tools for teaching through p5.js, adding f
 |wait(duration)   | Waits for the duration specified before playing the next animation. It is helpful in timing the animation.  |
 | Create(object)  | <img src="resources/create.gif" width="200" height="200"> <br /> Creates animation of object building up from scratch.|
 |   |   |
+
+
+### TODO 
+- [ ] text effects 
+- [ ] Create(object)
+- [ ] scene config ⚙️
