@@ -1,10 +1,17 @@
 # p5-teach.js
 This project would involve developing tools for teaching through p5.js, adding functions to animate shapes and exporting the animation in different formats (mp4 or webm). Main focus is to introduce a simple, easy to use library to animate and make scenes. This will also take advantage of p5.js core library - p5.sound.js for sound effects.
 
+### TODO 
+- [ ] text effects 
+- [ ] Create(object)
+- [ ] scene config ⚙️
+- [ ] morph port from https://p5js.org/examples/motion-morph.html 
+
+### TL;DR
 - https://two-ticks.github.io/p5-teach.js/
-- https://two-ticks.github.io/p5-teach.js/in-browser-animation/
-- https://two-ticks.github.io/p5-teach.js/ft-example/
-- hardcoded : https://two-ticks.github.io/p5-teach.js/effects/ transfer to p5-teach.js 
+- https://two-ticks.github.io/p5-teach.js/sandbox/in-browser-animation/
+- https://two-ticks.github.io/p5-teach.js/sandbox/ft-example/
+- hardcoded : https://two-ticks.github.io/p5-teach.js/sandbox/effects/ transfer to p5-teach.js 
 - https://two-ticks.github.io/p5-teach.js/sandbox/threeJS-projects/examples/3d-text.html
 
 ### API 
@@ -26,9 +33,3 @@ This project would involve developing tools for teaching through p5.js, adding f
 |wait(duration)   | Waits for the duration specified before playing the next animation. It is helpful in timing the animation.  |
 | Create(object)  | <img src="resources/create.gif" width="200" height="200"> <br /> Creates animation of object building up from scratch.|
 |   |   |
-
-
-### TODO 
-- [ ] text effects 
-- [ ] Create(object)
-- [ ] scene config ⚙️
