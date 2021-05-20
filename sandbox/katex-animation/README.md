@@ -1,8 +1,14 @@
+## TL;DR
+
+use regex to split and then render with katex
+
 ## KaTeX animations
 
--[] animate simple equation
+- [ ] animate algebraic simple equation
+- [ ] animate fraction and square root
 
-### RegEx 
+### RegEx
+
 Find : <kbd>Ctrl</kbd> + <kbd>F</kbd>
 
 .\* wildcard
@@ -21,3 +27,5 @@ Find : <kbd>Ctrl</kbd> + <kbd>F</kbd>
 \w A-Za-z0-9
 
 \s space and tab
+
+(\^.) checking if expression starts with ^
