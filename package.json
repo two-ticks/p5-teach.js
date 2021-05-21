@@ -1,0 +1,33 @@
+{
+  "name": "p5-teach",
+  "version": "0.0.1",
+  "description": "A library of tools for teaching with p5.js",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config webpack.config.cjs",
+    "test": "mocha-chrome test/test.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/two-ticks/p5-teach.js.git"
+  },
+  "keywords": [
+    "p5.js",
+    "teach",
+    "education"
+  ],
+  "author": "Aditya Siddheshwar",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/two-ticks/p5-teach.js/issues"
+  },
+  "homepage": "https://github.com/two-ticks/p5-teach.js#readme",
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^8.3.2",
+    "mocha-chrome": "^2.2.0",
+    "p5": "^1.3.1",
+    "webpack": "^5.37.1",
+    "webpack-cli": "^4.7.0"
+  }
+}
